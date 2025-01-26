@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "1337x.to",
+    "version": "1.0",
+    "description": "Activates on a specific URL.",
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://1337x.to/*",
+                "https://jaboltv.org/"
+            ],
+            "js": [
+                "jq.js",
+                "content.js"
+            ]
+        }
+    ]
+}
